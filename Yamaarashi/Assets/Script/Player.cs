@@ -2,31 +2,39 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+    float inputHorizontal;
+    float inputVertical;
+    Rigidbody rb;
 
-    Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
-    public float speed = 1.0f;
+    float moveSpeed = 3f;
 
-    public Rigidbody rb;
-    public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
-
-    private Vector3 zero = new Vector3(0.0f, 0.0f, 0.0f);
-
-    void Start () {
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
-	}
-	
-	void Update () {
-        velocity.z -= 0.9f;
-        if (velocity.z <= 0)
-        {
-            velocity.z = 0.0f;
-        }
+    }
 
-        if (Input.GetKey(KeyCode.W))
+    void Update()
+    {
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
+    }
+
+    void FixedUpdate()
+    {
+        // カメラの方向から、X-Z平面の単位ベクトルを取得
+        Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+
+        // 方向キーの入力値とカメラの向きから、移動方向を決定
+        Vector3 moveForward = cameraForward * inputVertical + Camera.main.transform.right * inputHorizontal;
+
+        // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
+        rb.velocity = moveForward * moveSpeed + new Vector3(0, rb.velocity.y, 0);
+
+        // キャラクターの向きを進行方向に
+        if (moveForward != Vector3.zero)
         {
-            velocity.z = speed*10.0f;
+            transform.rotation = Quaternion.LookRotation(moveForward);
         }
-        rb.MovePosition(transform.position + velocity * Time.deltaTime);
     }
 }
 
