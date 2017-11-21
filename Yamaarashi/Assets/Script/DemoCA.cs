@@ -7,6 +7,7 @@ public class DemoCA : MonoBehaviour
     //private CourseBlockColider colider;
     //private GameObject parent,child;
     private CourseBlock[] course;
+    private string[] name;
     private GameObject player;
     private Vector3 plus = new Vector3(0.0f, 2.0f, 0.0f);
 
@@ -14,6 +15,7 @@ public class DemoCA : MonoBehaviour
     void Start()
     {
         course = new CourseBlock[] { null, null, null, null };
+        name = new string[] { null, null, null, null };
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -23,36 +25,38 @@ public class DemoCA : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+    public void Enter(Collider collision)
     {
         if (collision.gameObject.tag == "CourseBlockColider"){
             for (short i = 0; i < course.Length; i++){
                 if (course[i] == null){
                     course[i] = collision.gameObject.GetComponent<CourseBlockColider>().GetComponentInParent<CourseBlock>();
+                    name[i] = collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name;
                     break;
                 }
             }
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    public void Exit(Collider collision)
     {
         if (collision.gameObject.tag == "CourseBlockColider"){
             for (short i = 0; i < course.Length; i++){
-                if (course[i] == collision.gameObject){
+                if (name[i] == collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name){
                     course[i] = null;
+                    name[i] = null;
                     break;
                 }
             }
         }
     }
 
-    private void OnTriggerStay(Collider collision)
+    public void Stay(Collider collision)
     {
         
         if (collision.gameObject.tag == "CourseBlockColider")
         {
-            Debug.Log("get");
+            //Debug.Log("get");
             short num = 0;
             Vector3 vec = new Vector3(0.0f,0.0f,0.0f);
             for (short i = 0; i < course.Length; i++)

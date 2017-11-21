@@ -11,25 +11,27 @@ public class Player : MonoBehaviour {
 
     public Rigidbody rb;
 
+    public DemoCA camera;
+
     void Start () {
 	}
 	
 	void Update () {
         vel = transform.position;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S))
         {
             vel.z += 0.5f * speed;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W))
         {
             vel.z -= 0.5f * speed;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             vel.x -= 0.5f * speed;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             vel.x += 0.5f * speed;
         }
@@ -41,6 +43,21 @@ public class Player : MonoBehaviour {
         {
             rb.AddForce(Vector3.up * 250);
         }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        camera.Enter(collision);
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        camera.Exit(collision);
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        camera.Stay(collision);
     }
 }
 
