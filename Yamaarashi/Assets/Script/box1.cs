@@ -3,23 +3,28 @@ using System.Collections;
 
 public class box1 : MonoBehaviour {
     Rigidbody rb;
-    public float jumpPower = 10;
+    public float jumpPower = 50;
+    public bool jump = false;
 
+    GameObject player;
 
-    // Use this for initialization
     void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
-	
+        player = GameObject.Find("Player");
 	}
+
     void OnTriggerEnter(Collider col)
     {
-        if (gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
-            rb.AddForce(transform.up * 10, ForceMode.Impulse);
+            if(jump==true)
+            {
+                //rb.AddForce(transform.up * 10, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(transform.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
+            }
         }
     }
 }
