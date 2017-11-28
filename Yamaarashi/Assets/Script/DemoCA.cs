@@ -10,6 +10,9 @@ public class DemoCA : MonoBehaviour
     private string[] name;
     private GameObject player;
     private Vector3 plus = new Vector3(0.0f, 2.0f, 0.0f);
+    private Vector3 vec = new Vector3(0.0f, 0.0f, 0.0f);
+    private Vector3 next = new Vector3(0.0f, 0.0f, 0.0f);
+    short num;
 
     // Use this for initialization
     void Start()
@@ -22,7 +25,25 @@ public class DemoCA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        num = 0;
+        vec = new Vector3(0.0f, 0.0f, 0.0f);
+        //Debug.Log("get");
+        for (short i = 0; i < course.Length; i++)
+        {
+            if (course[i] != null)
+            {
+                vec += course[i].GetVector();
+                num++;
+            }
+        }
+        if (vec != next)
+        {
+            vec /= num;
+            //course = collision.gameObject.GetComponent<CourseBlockColider>().GetComponentInParent<CourseBlock>();
+            this.transform.rotation = Quaternion.LookRotation(vec);
+            this.transform.position = player.transform.position + vec * -7 + plus;
+        }
     }
 
     public void Enter(Collider collision)
