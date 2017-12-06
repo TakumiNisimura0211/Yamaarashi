@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\JampDai.cs" />
+    <Compile Include="Assets\Script\Accelerator.cs" />
     <Compile Include="Assets\Script\box.cs" />
     <Compile Include="Assets\Script\box1.cs" />
     <Compile Include="Assets\Script\Coin.cs" />
