@@ -220,6 +220,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\JampDai.cs" />
+    <Compile Include="Assets\Script\Accelerator.cs" />
+    <Compile Include="Assets\Script\box.cs" />
     <Compile Include="Assets\Script\box1.cs" />
     <Compile Include="Assets\Script\Coin.cs" />
     <Compile Include="Assets\Script\CourseBlock.cs" />
@@ -231,8 +233,32 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\Score.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\AutoBlinkforSD.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\IKCtrlRightHand.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\IKLookAt.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\RandomWind.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\SpringBone.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\SpringCollider.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\SpringManager.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+    <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\readme.txt" />
     <None Include="Assets\test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
