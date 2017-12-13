@@ -63,12 +63,17 @@ public class Player : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
-        //プレイヤーと衝突したとき
+        //コインと衝突したとき
         if (collision.gameObject.tag == "Coin")
         {
             Destroy(collision.gameObject);
             ScoreScript.ScoreUp();
             getSE.PlayOneShot(getSE.clip);
+        }
+        if(collision.gameObject.tag=="Enemy")
+        {
+
+            Destroy(collision.gameObject,0.5f);
         }
     }
 
