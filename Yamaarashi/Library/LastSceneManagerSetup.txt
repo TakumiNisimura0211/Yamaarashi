@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/EndScene.unity
+- path: Assets/Scene/AlphaStage.unity
   isLoaded: 1
   isActive: 1

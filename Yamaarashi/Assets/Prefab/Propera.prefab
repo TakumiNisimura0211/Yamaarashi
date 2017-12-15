@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4747719509392252}
-  - component: {fileID: 114178385288920340}
+  - component: {fileID: 114733546238457702}
   m_Layer: 0
   m_Name: Propera
   m_TagString: Untagged
@@ -210,7 +210,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114178385288920340
+--- !u!114 &114733546238457702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404700651456536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9d42b047947d74d87a7227b08c0a49, type: 3}
+  m_Script: {fileID: 11500000, guid: 07dd3ba574ec37144bfabaf18f818a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   z: 100

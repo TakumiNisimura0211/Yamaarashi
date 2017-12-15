@@ -16,6 +16,6 @@ public class LoadScene : MonoBehaviour {
 
     public void SceneLoad()
     {
-        Application.LoadLevel("TestStage");
+        Application.LoadLevel("AlphaStage");
     }
 }
