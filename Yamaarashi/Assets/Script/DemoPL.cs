@@ -9,8 +9,11 @@ public class DemoPL : MonoBehaviour {
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
 
-	// Use this for initialization
-	void Start () {
+    AudioSource getSE;
+    public Score ScoreScript;
+
+    // Use this for initialization
+    void Start () {
         moveSpeed = 20.0f;
         maxSpeed = 40.0f;
         minSpeed = 3.0f;
@@ -18,9 +21,9 @@ public class DemoPL : MonoBehaviour {
 
         rb = gameObject.GetComponent<Rigidbody>();
 
+        getSE = GetComponent<AudioSource>();
 
-        
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -78,6 +81,17 @@ public class DemoPL : MonoBehaviour {
         else if(moveForward == Vector3.zero)
         {
             moveSpeed = 20.0f;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        //プレイヤーと衝突したとき
+        if (collision.gameObject.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+            ScoreScript.ScoreUp();
+            getSE.PlayOneShot(getSE.clip);
         }
     }
 }

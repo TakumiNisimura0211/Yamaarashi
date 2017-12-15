@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour {
     Rigidbody rb;
-    public float JumpPower = 250;
+    public float JumpPower = 25;
     public bool jump = false;
     GameObject player;
 
 	void Start () {
-        player = GameObject.Find("Player");
+        //player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	void OnTriggerEnter(Collider col)
