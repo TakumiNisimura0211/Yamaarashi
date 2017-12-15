@@ -39,7 +39,7 @@ public class DemoPL : MonoBehaviour {
 
         if(Input.GetButtonDown("Jump"))
         {
-            
+            rb.AddForce(Vector3.up * 500);
         }
 
         this.gameObject.transform.forward = camera.transform.forward;
