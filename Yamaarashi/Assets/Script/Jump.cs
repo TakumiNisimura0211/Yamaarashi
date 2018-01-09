@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour {
     GameObject player;
 
 	void Start () {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
 	}
 	
 	void OnTriggerEnter(Collider col)

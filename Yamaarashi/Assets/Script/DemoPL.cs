@@ -5,10 +5,9 @@ public class DemoPL : MonoBehaviour {
 
     float moveSpeed,maxSpeed,minSpeed;
     public DemoCA camera;
-    //public bool stay = false;
-    private Rigidbody rb;
-    float inputHorizontal, inputVertical;
+    public bool stay = false;
 
+<<<<<<< HEAD
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
@@ -27,22 +26,22 @@ public class DemoPL : MonoBehaviour {
         animator = this.GetComponent<Animator>();
 
     }
+=======
+	// Use this for initialization
+	void Start () {
+        moveSpeed = 0.5f;
+        maxSpeed = 10.0f;
+        minSpeed = 3.0f;
+        this.gameObject.transform.forward = camera.transform.forward;
+	}
+>>>>>>> b8b7ad7b5ecde69dec6584126a73fc4ff540aa59
 	
 	// Update is called once per frame
 	void Update () {
 
-        //if(Input.GetKey(KeyCode.W))
-        //{
-        //    //rb.AddForce(transform.forward * maxSpeed);
-        //    transform.position += transform.forward * moveSpeed;
-        //}
-
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
-
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(Vector3.up * 250);
+            transform.position += transform.forward * moveSpeed;
         }
 
         this.gameObject.transform.forward = camera.transform.forward;
@@ -70,6 +69,7 @@ public class DemoPL : MonoBehaviour {
     {
         camera.Stay(collision);
     }*/
+<<<<<<< HEAD
 
     void FixedUpdate()
     {
@@ -111,4 +111,6 @@ public class DemoPL : MonoBehaviour {
     }*/
 
 
+=======
+>>>>>>> b8b7ad7b5ecde69dec6584126a73fc4ff540aa59
 }
