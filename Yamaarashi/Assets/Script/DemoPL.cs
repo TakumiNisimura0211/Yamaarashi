@@ -11,6 +11,7 @@ public class DemoPL : MonoBehaviour {
 
     AudioSource getSE;
     public Score ScoreScript;
+    Animator animator;
 
     // Use this for initialization
     void Start () {
@@ -22,6 +23,8 @@ public class DemoPL : MonoBehaviour {
         rb = gameObject.GetComponent<Rigidbody>();
 
         getSE = GetComponent<AudioSource>();
+
+        animator = this.GetComponent<Animator>();
 
     }
 	
@@ -47,12 +50,20 @@ public class DemoPL : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        camera.Enter(collision);
+        if (collision.gameObject.tag == "CourseBlockColider")
+            camera.Enter(collision);
+        else if(collision.gameObject.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+            ScoreScript.ScoreUp();
+            getSE.PlayOneShot(getSE.clip);
+        }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        camera.Exit(collision);
+        if (collision.gameObject.tag == "CourseBlockColider")
+            camera.Exit(collision);
     }
 
     /*private void OnTriggerStay(Collider collision)
@@ -77,14 +88,18 @@ public class DemoPL : MonoBehaviour {
             transform.rotation = Quaternion.LookRotation(moveForward);
             if(moveSpeed <= maxSpeed)
             moveSpeed += 0.1f;
+            //if(animator.GetBool("run") != true)
+            //animator.SetBool("run", true);
         }
         else if(moveForward == Vector3.zero)
         {
             moveSpeed = 20.0f;
+            //if (animator.GetBool("run") != false)
+            //    animator.SetBool("run", false);
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         //プレイヤーと衝突したとき
         if (collision.gameObject.tag == "Coin")
@@ -93,5 +108,7 @@ public class DemoPL : MonoBehaviour {
             ScoreScript.ScoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
-    }
+    }*/
+
+
 }

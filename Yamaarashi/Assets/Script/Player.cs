@@ -57,10 +57,10 @@ public class Player : MonoBehaviour {
         camera.Exit(collision);
     }
 
-    private void OnTriggerStay(Collider collision)
+    /*private void OnTriggerStay(Collider collision)
     {
         camera.Stay(collision);
-    }
+    }*/
     void OnCollisionEnter(Collision collision)
     {
         //コインと衝突したとき
