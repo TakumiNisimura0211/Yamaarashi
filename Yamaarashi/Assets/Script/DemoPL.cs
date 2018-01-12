@@ -5,12 +5,13 @@ public class DemoPL : MonoBehaviour {
 
     float moveSpeed,maxSpeed,minSpeed;
     public DemoCA camera;
-    public bool stay = false;
+    private Rigidbody rb;
+    float inputHorizontal, inputVertical;
 
-<<<<<<< HEAD
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
+    bool jump;
 
     // Use this for initialization
     void Start () {
@@ -18,6 +19,7 @@ public class DemoPL : MonoBehaviour {
         maxSpeed = 40.0f;
         minSpeed = 3.0f;
         this.gameObject.transform.forward = camera.transform.forward;
+        jump = false;
 
         rb = gameObject.GetComponent<Rigidbody>();
 
@@ -26,22 +28,24 @@ public class DemoPL : MonoBehaviour {
         animator = this.GetComponent<Animator>();
 
     }
-=======
-	// Use this for initialization
-	void Start () {
-        moveSpeed = 0.5f;
-        maxSpeed = 10.0f;
-        minSpeed = 3.0f;
-        this.gameObject.transform.forward = camera.transform.forward;
-	}
->>>>>>> b8b7ad7b5ecde69dec6584126a73fc4ff540aa59
 	
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKey(KeyCode.W))
+        //if(Input.GetKey(KeyCode.W))
+        //{
+        //    //rb.AddForce(transform.forward * maxSpeed);
+        //    transform.position += transform.forward * moveSpeed;
+        //}
+
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
+
+        if(jump != true && Input.GetButtonDown("Jump"))
         {
-            transform.position += transform.forward * moveSpeed;
+            rb.AddForce(Vector3.up * 250);
+            jump = true;
+            Debug.Log(jump);
         }
 
         this.gameObject.transform.forward = camera.transform.forward;
@@ -49,13 +53,20 @@ public class DemoPL : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
+        //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
-        else if(collision.gameObject.tag == "Coin")
+        //コイン
+        if (collision.gameObject.tag == "Coin")
         {
             Destroy(collision.gameObject);
             ScoreScript.ScoreUp();
             getSE.PlayOneShot(getSE.clip);
+        }
+        //ジャンプ
+        if (collision.gameObject.tag == "StageColider")
+        {
+            jump = false;
         }
     }
 
@@ -69,7 +80,6 @@ public class DemoPL : MonoBehaviour {
     {
         camera.Stay(collision);
     }*/
-<<<<<<< HEAD
 
     void FixedUpdate()
     {
@@ -111,6 +121,4 @@ public class DemoPL : MonoBehaviour {
     }*/
 
 
-=======
->>>>>>> b8b7ad7b5ecde69dec6584126a73fc4ff540aa59
 }
