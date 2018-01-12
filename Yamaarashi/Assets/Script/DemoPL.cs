@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DemoPL : MonoBehaviour {
+public class DemoPL : MonoBehaviour
+{
 
-    float moveSpeed,maxSpeed,minSpeed;
+    float moveSpeed, maxSpeed, minSpeed;
     public DemoCA camera;
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
 
-<<<<<<< HEAD
+
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
     bool jump;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         moveSpeed = 20.0f;
         maxSpeed = 40.0f;
         minSpeed = 3.0f;
@@ -29,18 +31,10 @@ public class DemoPL : MonoBehaviour {
         animator = this.GetComponent<Animator>();
 
     }
-=======
-	// Use this for initialization
-	void Start () {
-        moveSpeed = 0.5f;
-        maxSpeed = 10.0f;
-        minSpeed = 3.0f;
-        this.gameObject.transform.forward = camera.transform.forward;
-	}
->>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //if(Input.GetKey(KeyCode.W))
         //{
@@ -51,7 +45,7 @@ public class DemoPL : MonoBehaviour {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        if(jump != true && Input.GetButtonDown("Jump"))
+        if (jump != true && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector3.up * 250);
             jump = true;
@@ -63,7 +57,6 @@ public class DemoPL : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-<<<<<<< HEAD
         //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
@@ -79,9 +72,7 @@ public class DemoPL : MonoBehaviour {
         {
             jump = false;
         }
-=======
         camera.Enter(collision);
->>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
     }
 
     private void OnTriggerExit(Collider collision)
@@ -93,7 +84,6 @@ public class DemoPL : MonoBehaviour {
     {
         camera.Stay(collision);
     }*/
-<<<<<<< HEAD
 
     void FixedUpdate()
     {
@@ -110,18 +100,19 @@ public class DemoPL : MonoBehaviour {
         if (moveForward != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(moveForward);
-            if(moveSpeed <= maxSpeed)
-            moveSpeed += 0.1f;
+            if (moveSpeed <= maxSpeed)
+                moveSpeed += 0.1f;
             //if(animator.GetBool("run") != true)
             //animator.SetBool("run", true);
         }
-        else if(moveForward == Vector3.zero)
+        else if (moveForward == Vector3.zero)
         {
             moveSpeed = 20.0f;
             //if (animator.GetBool("run") != false)
             //    animator.SetBool("run", false);
         }
     }
+}
 
     /*void OnCollisionEnter(Collision collision)
     {
@@ -134,7 +125,3 @@ public class DemoPL : MonoBehaviour {
         }
     }*/
 
-
-=======
->>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
-}
