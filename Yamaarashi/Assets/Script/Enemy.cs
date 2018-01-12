@@ -7,23 +7,34 @@ public class Enemy : MonoBehaviour {
     private bool moveFlg = false;
     GameObject player;
 
-	// Use this for initialization
-	void Start () {
+    public float speed = 0.05f; //移動速度
+
+    private bool isEnable = false;
+
+    // Use this for initialization
+    void Start () {
         anim = GetComponent<Animator>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update () {
-        if(Vector3.Distance(this.gameObject.transform.position,player.transform.position) <= 4.5f)
+        Vector3 moveDirection = Vector3.zero;
+        if (isEnable == true)
         {
-            anim.SetBool("moveFlg", true);
+            if (Vector3.Distance(transform.position, player.transform.position) > 2)
+            {
+                anim.SetBool("moveFlg", true);
+                Vector3 playerDirection = player.transform.position;
+                transform.LookAt(player.transform);
+                moveDirection += transform.forward * 0.05f;
+                transform.position += moveDirection;
+            }
         }
-        else if(Vector3.Distance(this.gameObject.transform.position, player.transform.position) > 4.5f)
+        else if(isEnable==false)
         {
             anim.SetBool("moveFlg", false);
         }
-
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -33,4 +44,20 @@ public class Enemy : MonoBehaviour {
             anim.SetTrigger("Death");
         }
     }
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.tag == "Player")
+        {
+            isEnable = true;
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if (coll.tag == "Player")
+        {
+            isEnable = false;
+        }
+    }
+
 }

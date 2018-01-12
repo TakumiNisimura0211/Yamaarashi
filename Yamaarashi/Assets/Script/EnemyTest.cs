@@ -2,28 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTest : MonoBehaviour {
-    Animator animator;
+//敵の動き制御。距離を考慮するタイプ
+public class enemytest : MonoBehaviour
+{
+    GameObject player;
+    float speed = 1.0f;
+
     private bool isEnable = false;
-    public GameObject player;
-    bool moveFlg = false;
 
-
-	// Use this for initialization
-	void Start () {
-        animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+    //ゲーム開始時に一度
+    void Start()
+    {
+        player = GameObject.Find("Player");
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(Input.GetKey(KeyCode.M))
+
+    //毎フレームに一度
+    void Update()
+    {
+        Vector3 moveDirection = Vector3.zero;
+        if(isEnable==true)
         {
-            animator.SetBool("moveFlg",true);
+            if(Vector3.Distance(transform.position,player.transform.position)>2)
+            {
+                Vector3 playerDirection = player.transform.position;
+                transform.LookAt(player.transform);
+                moveDirection += transform.forward * 0.05f;
+                transform.position += moveDirection;
+            }
         }
-        if(Input.GetKey(KeyCode.N))
+    }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if(coll.tag=="Player")
         {
-            animator.SetBool("New Bool", false);
+            isEnable = true;
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if(coll.tag=="Player")
+        {
+            isEnable = false;
         }
     }
 }
+

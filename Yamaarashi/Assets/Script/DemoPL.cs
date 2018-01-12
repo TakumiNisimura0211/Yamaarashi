@@ -8,6 +8,7 @@ public class DemoPL : MonoBehaviour {
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
 
+<<<<<<< HEAD
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
@@ -28,6 +29,15 @@ public class DemoPL : MonoBehaviour {
         animator = this.GetComponent<Animator>();
 
     }
+=======
+	// Use this for initialization
+	void Start () {
+        moveSpeed = 0.5f;
+        maxSpeed = 10.0f;
+        minSpeed = 3.0f;
+        this.gameObject.transform.forward = camera.transform.forward;
+	}
+>>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
 	
 	// Update is called once per frame
 	void Update () {
@@ -53,6 +63,7 @@ public class DemoPL : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
+<<<<<<< HEAD
         //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
@@ -68,18 +79,21 @@ public class DemoPL : MonoBehaviour {
         {
             jump = false;
         }
+=======
+        camera.Enter(collision);
+>>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "CourseBlockColider")
-            camera.Exit(collision);
+        camera.Exit(collision);
     }
 
     /*private void OnTriggerStay(Collider collision)
     {
         camera.Stay(collision);
     }*/
+<<<<<<< HEAD
 
     void FixedUpdate()
     {
@@ -121,4 +135,6 @@ public class DemoPL : MonoBehaviour {
     }*/
 
 
+=======
+>>>>>>> abd0fded6ebf29db8c9c082330d5fa11093fc869
 }
