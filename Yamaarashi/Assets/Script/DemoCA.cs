@@ -48,33 +48,31 @@ public class DemoCA : MonoBehaviour
 
     public void Enter(Collider collision)
     {
-        for (short i = 0; i < course.Length; i++)
-        {
-            if (course[i] == null)
-            {
-                course[i] = collision.gameObject.GetComponent<CourseBlockColider>().GetComponentInParent<CourseBlock>();
-                name[i] = collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name;
-                break;
+        if (collision.gameObject.tag == "CourseBlockColider"){
+            for (short i = 0; i < course.Length; i++){
+                if (course[i] == null){
+                    course[i] = collision.gameObject.GetComponent<CourseBlockColider>().GetComponentInParent<CourseBlock>();
+                    name[i] = collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name;
+                    break;
+                }
             }
         }
-
     }
 
     public void Exit(Collider collision)
     {
-        for (short i = 0; i < course.Length; i++)
-        {
-            if (name[i] == collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name)
-            {
-                course[i] = null;
-                name[i] = null;
-                break;
+        if (collision.gameObject.tag == "CourseBlockColider"){
+            for (short i = 0; i < course.Length; i++){
+                if (name[i] == collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name){
+                    course[i] = null;
+                    name[i] = null;
+                    break;
+                }
             }
         }
-
     }
 
-    /*public void Stay(Collider collision)
+    public void Stay(Collider collision)
     {
         
         if (collision.gameObject.tag == "CourseBlockColider")
@@ -96,5 +94,5 @@ public class DemoCA : MonoBehaviour
             this.transform.position = player.transform.position + vec * -7 + plus;
             
         }
-    }*/
+    }
 }
