@@ -9,7 +9,6 @@ public class DemoPL : MonoBehaviour
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
 
-
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
@@ -29,7 +28,7 @@ public class DemoPL : MonoBehaviour
         getSE = GetComponent<AudioSource>();
 
         animator = this.GetComponent<Animator>();
-
+        animator.Play("Standing@loop");
     }
 
     // Update is called once per frame
@@ -99,6 +98,8 @@ public class DemoPL : MonoBehaviour
         // キャラクターの向きを進行方向に
         if (moveForward != Vector3.zero)
         {
+            if (animator.GetBool("Run") == false)
+                animator.SetBool("Run", true);
             transform.rotation = Quaternion.LookRotation(moveForward);
             if (moveSpeed <= maxSpeed)
                 moveSpeed += 0.1f;
@@ -107,6 +108,8 @@ public class DemoPL : MonoBehaviour
         }
         else if (moveForward == Vector3.zero)
         {
+            if (animator.GetBool("Run") == true)
+                animator.SetBool("Run", false);
             moveSpeed = 20.0f;
             //if (animator.GetBool("run") != false)
             //    animator.SetBool("run", false);
