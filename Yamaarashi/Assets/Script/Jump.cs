@@ -9,17 +9,14 @@ public class Jump : MonoBehaviour {
     GameObject player;
 
 	void Start () {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
-	
-	void OnTriggerEnter(Collider col)
+
+    void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag== "Player")
+        if (jump)
         {
-            if(jump)
-            {
-                player.GetComponent<Rigidbody>().AddForce(transform.up * JumpPower * Time.deltaTime, ForceMode.Impulse);
-            }
+            player.GetComponent<Rigidbody>().AddForce(transform.up * JumpPower * Time.deltaTime, ForceMode.Impulse);
         }
     }
 
