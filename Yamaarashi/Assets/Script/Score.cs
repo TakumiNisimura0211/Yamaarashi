@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    public int Scores = 0;
+    public int Scores = 00;
     public Text scoreText;
 
     // Use this for initialization
@@ -15,7 +15,8 @@ public class Score : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        scoreText.text = Scores.ToString();
+        //scoreText.text = Scores.ToString();
+        scoreText.text = "Score : " + Scores.ToString();
     }
 
     public void ScoreUp()
