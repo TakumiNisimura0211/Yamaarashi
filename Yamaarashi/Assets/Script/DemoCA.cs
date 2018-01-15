@@ -49,13 +49,6 @@ public class DemoCA : MonoBehaviour
     public void Enter(Collider collision)
     {
         if (collision.gameObject.tag == "CourseBlockColider"){
-            for (short i = 0; i < course.Length; i++)
-            {
-                if (name[i] == collision.gameObject.GetComponentInParent<CourseBlock>().gameObject.name)
-                {
-                    return;
-                }
-            }
             for (short i = 0; i < course.Length; i++){
                 if (course[i] == null){
                     course[i] = collision.gameObject.GetComponent<CourseBlockColider>().GetComponentInParent<CourseBlock>();
