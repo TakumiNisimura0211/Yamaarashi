@@ -301,6 +301,7 @@
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\Propera.cs" />
     <Compile Include="Assets\Script\Score.cs" />
+    <Compile Include="Assets\Script\TimeText.cs" />
     <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\UnityChan\Scripts\AutoBlinkforSD.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
