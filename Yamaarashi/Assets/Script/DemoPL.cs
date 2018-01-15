@@ -46,9 +46,7 @@ public class DemoPL : MonoBehaviour
 
         if (jump != true && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(Vector3.up * 250);
-            jump = true;
-            Debug.Log(jump);
+            rb.AddForce(Vector3.up * 300);
         }
 
         this.gameObject.transform.forward = camera.transform.forward;
@@ -56,6 +54,7 @@ public class DemoPL : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+            Debug.Log("coin");
         //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
@@ -66,12 +65,15 @@ public class DemoPL : MonoBehaviour
             ScoreScript.ScoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
+        camera.Enter(collision);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
         //ジャンプ
         if (collision.gameObject.tag == "StageColider")
         {
             jump = false;
         }
-        camera.Enter(collision);
     }
 
     private void OnTriggerExit(Collider collision)
@@ -83,6 +85,13 @@ public class DemoPL : MonoBehaviour
     {
         camera.Stay(collision);
     }*/
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "StageColider")
+        {
+            jump = true;
+        }
+    }
 
     void FixedUpdate()
     {
