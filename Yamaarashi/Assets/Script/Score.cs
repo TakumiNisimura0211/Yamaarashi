@@ -3,18 +3,21 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class Score : MonoBehaviour {
+public class Score : MonoBehaviour
+{
 
     public int Scores = 00;
     public Text scoreText;
 
     // Use this for initialization
-    void Start () {
-        
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         //scoreText.text = Scores.ToString();
         scoreText.text = "Score : " + Scores.ToString();
     }
@@ -22,5 +25,9 @@ public class Score : MonoBehaviour {
     public void ScoreUp()
     {
         Scores++;
-    } 
+    }
+    public void SscoreUp()
+    {
+        Scores += 5;
+    }
 }
