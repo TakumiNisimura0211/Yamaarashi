@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 
 
 public class Score : MonoBehaviour
 {
 
     public int Scores = 00;
-    public Text scoreText;
+    public GUIText scoreText;
 
     // Use this for initialization
     void Start()
