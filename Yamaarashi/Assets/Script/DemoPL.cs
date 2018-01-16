@@ -65,6 +65,12 @@ public class DemoPL : MonoBehaviour
             ScoreScript.ScoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
+        if (collision.gameObject.tag == "Coin+")
+        {
+            Destroy(collision.gameObject);
+            ScoreScript.SscoreUp();
+            getSE.PlayOneShot(getSE.clip);
+        }
         camera.Enter(collision);
     }
     private void OnCollisionEnter(Collision collision)
