@@ -7,8 +7,9 @@ public class Jump : MonoBehaviour {
     public float JumpPower = 250;
     public bool jump = false;
     GameObject player;
+    public Vector3 AccelPowers = Vector3.up;
 
-	void Start () {
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 
@@ -16,7 +17,9 @@ public class Jump : MonoBehaviour {
     {
         if (jump)
         {
-            player.GetComponent<Rigidbody>().AddForce(transform.up * JumpPower * Time.deltaTime, ForceMode.Impulse);
+            //player.GetComponent<Rigidbody>().AddForce(transform.up * JumpPower * Time.deltaTime, ForceMode.Impulse);
+            player.GetComponent<Rigidbody>().AddForce(AccelPowers.normalized * JumpPower * Time.deltaTime, ForceMode.Impulse);
+
         }
     }
 
