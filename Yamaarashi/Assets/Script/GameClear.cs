@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour {
 
@@ -14,11 +15,11 @@ public class GameClear : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "Player")
         {
-            Application.LoadLevel("EndScene");
+            SceneManager.LoadScene("EndScene");
         }
     }
 }

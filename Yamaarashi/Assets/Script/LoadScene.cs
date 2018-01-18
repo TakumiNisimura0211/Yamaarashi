@@ -12,12 +12,7 @@ public class LoadScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-    public void SceneLoad()
-    {
-        SceneManager.LoadScene("AlphaStage");
-        //Application.LoadLevel("AlphaStage");
+		if(Input.anyKey)
+            SceneManager.LoadScene("AlphaStage");
     }
 }

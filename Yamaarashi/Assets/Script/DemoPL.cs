@@ -4,7 +4,7 @@ using System.Collections;
 public class DemoPL : MonoBehaviour
 {
 
-    float moveSpeed, maxSpeed, minSpeed;
+    float moveSpeed, maxSpeed;
     public DemoCA camera;
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
@@ -18,8 +18,7 @@ public class DemoPL : MonoBehaviour
     void Start()
     {
         moveSpeed = 20.0f;
-        maxSpeed = 40.0f;
-        minSpeed = 3.0f;
+        maxSpeed = 30.0f;
         this.gameObject.transform.forward = camera.transform.forward;
         jump = false;
 
@@ -47,6 +46,7 @@ public class DemoPL : MonoBehaviour
         if (jump != true && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector3.up * 300);
+            animator.SetBool("Jump", true);
         }
 
         this.gameObject.transform.forward = camera.transform.forward;
@@ -54,7 +54,6 @@ public class DemoPL : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-            Debug.Log("coin");
         //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
@@ -71,7 +70,6 @@ public class DemoPL : MonoBehaviour
             ScoreScript.SscoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
-        camera.Enter(collision);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -96,6 +94,7 @@ public class DemoPL : MonoBehaviour
         if (collision.gameObject.tag == "StageColider")
         {
             jump = true;
+            animator.SetBool("Jump", false);
         }
     }
 
