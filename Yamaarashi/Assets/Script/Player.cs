@@ -72,7 +72,6 @@ public class Player : MonoBehaviour {
         }
         if(collision.gameObject.tag=="Enemy")
         {
-
             Destroy(collision.gameObject,0.5f);
         }
     }

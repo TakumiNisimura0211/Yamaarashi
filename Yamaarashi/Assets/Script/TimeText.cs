@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class TimeText : MonoBehaviour {
 
@@ -9,15 +6,14 @@ public class TimeText : MonoBehaviour {
     float second;
     //前のUpdate時の秒数
     float oldsecond;
-    //表示用Text
-    Text timetext;
+    GUIText timetext;
 
 	// Use this for initialization
 	void Start () {
         minute = 0;
         second = 0f;
         oldsecond = 0f;
-        timetext = GetComponent<Text>();
+        timetext = GetComponent<GUIText>();
 	}
 	
 	// Update is called once per frame

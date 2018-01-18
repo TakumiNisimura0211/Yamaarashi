@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             anim.SetTrigger("Death");
+            Destroy(gameObject,0.5f);
         }
     }
     void OnTriggerEnter(Collider coll)
