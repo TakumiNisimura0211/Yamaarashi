@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1350
     height: 669
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,8 +106,8 @@ MonoBehaviour:
     y: 30
     width: 1350
     height: 619
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 28
 --- !u!114 &6
@@ -130,7 +130,7 @@ MonoBehaviour:
     y: 0
     width: 1073
     height: 619
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 29
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1073
     height: 348
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 30
 --- !u!114 &8
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 327
     height: 348
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -255,8 +255,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 619
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -368,9 +368,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d4f6ffff
-    m_LastClickedID: -2348
-    m_ExpandedIDs: 9efbffff00000000b42d0000
+    m_SelectedIDs: acf6ffff
+    m_LastClickedID: -2388
+    m_ExpandedIDs: 9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Stage_2
+  - AlphaStage
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -426,9 +426,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.161003, y: -12.911319, z: 87.646576}
+    m_Target: {x: 0.08816215, y: -37.237503, z: 58.368412}
     speed: 2
-    m_Value: {x: -6.161003, y: -12.911319, z: 87.646576}
+    m_Value: {x: 0.08816215, y: -37.237503, z: 58.368412}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -452,13 +452,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.3495217, y: 0.21015759, z: -0.08076818, w: -0.9094752}
+    m_Target: {x: -0.28778142, y: 0.00056496455, z: -0.0001718943, w: -0.95769596}
     speed: 2
-    m_Value: {x: -0.34952167, y: 0.21015756, z: -0.080768175, w: -0.9094751}
+    m_Value: {x: -0.28778142, y: 0.00056496455, z: -0.0001718943, w: -0.95769596}
   m_Size:
-    m_Target: 35.553284
+    m_Target: 74.429146
     speed: 2
-    m_Value: 35.553284
+    m_Value: 74.429146
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -622,10 +622,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\GitHub\Yamaarashi\Yamaarashi
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 39}
+    scrollPos: {x: 0, y: 91}
     m_SelectedIDs: 08280000
     m_LastClickedID: 10248
-    m_ExpandedIDs: 00000000862700003629000082290000702a0000b02a0000022b0000682b0000ba320000bc320000be320000c0320000c2320000c4320000c632000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000862700003629000082290000702a0000b02a0000022b0000682b00009432000096320000983200009a3200009c3200009e320000a032000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +653,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 34220000
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000862700003629000082290000702a0000b02a0000022b0000682b0000ba320000bc320000be320000c0320000c2320000c4320000c6320000
+    m_ExpandedIDs: 00000000862700003629000082290000702a0000b02a0000022b0000682b00009432000096320000983200009a3200009c3200009e320000a0320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
