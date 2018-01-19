@@ -13,6 +13,7 @@ public class DemoPL : MonoBehaviour
     public Score ScoreScript;
     Animator animator;
     bool jump;
+    Vector3 nonFowrad;
 
     // Use this for initialization
     void Start()
@@ -49,7 +50,7 @@ public class DemoPL : MonoBehaviour
             animator.SetBool("Jump", true);
         }
 
-        this.gameObject.transform.forward = camera.transform.forward;
+        //this.gameObject.transform.forward = camera.transform.forward;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -117,6 +118,7 @@ public class DemoPL : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(moveForward);
             if (moveSpeed <= maxSpeed)
                 moveSpeed += 0.1f;
+            nonFowrad = moveForward;
             //if(animator.GetBool("run") != true)
             //animator.SetBool("run", true);
         }
@@ -125,6 +127,7 @@ public class DemoPL : MonoBehaviour
             if (animator.GetBool("Run") == true)
                 animator.SetBool("Run", false);
             moveSpeed = 20.0f;
+            transform.rotation = Quaternion.LookRotation(nonFowrad);
             //if (animator.GetBool("run") != false)
             //    animator.SetBool("run", false);
         }
