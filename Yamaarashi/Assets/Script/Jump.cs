@@ -15,6 +15,7 @@ public class Jump : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
+        if(col.gameObject.tag == "Player")
         if (jump)
         {
             //player.GetComponent<Rigidbody>().AddForce(transform.up * JumpPower * Time.deltaTime, ForceMode.Impulse);

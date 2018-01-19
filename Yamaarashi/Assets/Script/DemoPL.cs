@@ -4,7 +4,7 @@ using System.Collections;
 public class DemoPL : MonoBehaviour
 {
 
-    float moveSpeed, maxSpeed, minSpeed;
+    float moveSpeed, maxSpeed;
     public DemoCA camera;
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
@@ -13,13 +13,13 @@ public class DemoPL : MonoBehaviour
     public Score ScoreScript;
     Animator animator;
     bool jump;
+    Vector3 nonFowrad;
 
     // Use this for initialization
     void Start()
     {
         moveSpeed = 20.0f;
-        maxSpeed = 40.0f;
-        minSpeed = 3.0f;
+        maxSpeed = 30.0f;
         this.gameObject.transform.forward = camera.transform.forward;
         jump = false;
 
@@ -47,6 +47,7 @@ public class DemoPL : MonoBehaviour
         if (jump != true && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector3.up * 300);
+            animator.SetBool("Jump", true);
         }
 
         //this.gameObject.transform.forward = camera.transform.forward;
@@ -54,7 +55,6 @@ public class DemoPL : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-            Debug.Log("coin");
         //カメラ
         if (collision.gameObject.tag == "CourseBlockColider")
             camera.Enter(collision);
@@ -71,7 +71,6 @@ public class DemoPL : MonoBehaviour
             ScoreScript.SscoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
-        camera.Enter(collision);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -96,6 +95,7 @@ public class DemoPL : MonoBehaviour
         if (collision.gameObject.tag == "StageColider")
         {
             jump = true;
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -118,6 +118,7 @@ public class DemoPL : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(moveForward);
             if (moveSpeed <= maxSpeed)
                 moveSpeed += 0.1f;
+            nonFowrad = moveForward;
             //if(animator.GetBool("run") != true)
             //animator.SetBool("run", true);
         }
@@ -126,6 +127,7 @@ public class DemoPL : MonoBehaviour
             if (animator.GetBool("Run") == true)
                 animator.SetBool("Run", false);
             moveSpeed = 20.0f;
+            transform.rotation = Quaternion.LookRotation(nonFowrad);
             //if (animator.GetBool("run") != false)
             //    animator.SetBool("run", false);
         }
