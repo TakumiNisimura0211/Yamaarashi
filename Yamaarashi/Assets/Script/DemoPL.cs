@@ -49,7 +49,7 @@ public class DemoPL : MonoBehaviour
             rb.AddForce(Vector3.up * 300);
         }
 
-        this.gameObject.transform.forward = camera.transform.forward;
+        //this.gameObject.transform.forward = camera.transform.forward;
     }
 
     private void OnTriggerEnter(Collider collision)

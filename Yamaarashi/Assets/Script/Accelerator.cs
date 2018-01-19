@@ -5,9 +5,7 @@ using UnityEngine;
 public class Accelerator : MonoBehaviour {
 
     GameObject player;
-    private float AccelPower = 1.0f;
-
-    public Vector3 AccelPowers = new Vector3(0.0f, 0.0f, 30.0f);
+    public float AccelPower = 1.0f;
 
     // Use this for initialization
     void Start () {
@@ -23,9 +21,8 @@ public class Accelerator : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            player.GetComponent<Rigidbody>().AddForce(Vector3.up * AccelPower * Time.deltaTime, ForceMode.VelocityChange);
+            //col.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * AccelPower * Time.deltaTime, ForceMode.VelocityChange);
+            col.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,10,30), ForceMode.VelocityChange);
         }
     }
-
-
 }

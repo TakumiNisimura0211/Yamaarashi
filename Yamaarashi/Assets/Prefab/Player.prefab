@@ -4022,7 +4022,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678962890103276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d564c9aeab6e40c459582da946a3439b, type: 3}
   m_Name: 
@@ -4044,7 +4044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  stay: 0
+  ScoreScript: {fileID: 0}
 --- !u!135 &135218771719581178
 SphereCollider:
   m_ObjectHideFlags: 1
