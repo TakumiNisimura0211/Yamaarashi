@@ -5,14 +5,13 @@ using UnityEngine;
 public class Accelerator : MonoBehaviour {
 
     GameObject player;
-    private 
-        float AccelPower = 1.0f;
+    private float AccelPower = 1.0f;
 
-    public Vector3 AccelPowers = Vector3.zero;
+    public Vector3 AccelPowers = new Vector3(0.0f, 0.0f, 30.0f);
 
     // Use this for initialization
     void Start () {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
@@ -20,16 +19,13 @@ public class Accelerator : MonoBehaviour {
     void Update () {
 
     }
-    //void OnTriggerEnter(Collider col)
-    //{
-    //    if (col.gameObject.tag == "Player")
-    //    {
-    //        player.GetComponent<Rigidbody>().AddForce(Vector3.up * AccelPower * Time.deltaTime, ForceMode.VelocityChange);
-    //    }
-    //}
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider col)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(AccelPowers, ForceMode.VelocityChange);
+        if (col.gameObject.tag == "Player")
+        {
+            player.GetComponent<Rigidbody>().AddForce(Vector3.up * AccelPower * Time.deltaTime, ForceMode.VelocityChange);
+        }
     }
+
 
 }

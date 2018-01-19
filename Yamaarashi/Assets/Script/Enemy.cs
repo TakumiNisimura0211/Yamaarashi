@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
         Vector3 moveDirection = Vector3.zero;
         if (isEnable == true)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) > 2)
+            if (Vector3.Distance(transform.position, player.transform.position) > 1)
             {
                 anim.SetBool("moveFlg", true);
                 Vector3 playerDirection = player.transform.position;
