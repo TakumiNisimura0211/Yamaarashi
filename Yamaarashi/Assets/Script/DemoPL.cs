@@ -18,8 +18,8 @@ public class DemoPL : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        moveSpeed = 20.0f;
-        maxSpeed = 30.0f;
+        moveSpeed = 5.0f;
+        maxSpeed = 20.0f;
         this.gameObject.transform.forward = camera.transform.forward;
         jump = false;
 
