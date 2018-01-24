@@ -15,6 +15,8 @@ public class DemoPL : MonoBehaviour
     bool jump;
     Vector3 nonFowrad;
 
+    public DushEffect df;
+
     // Use this for initialization
     void Start()
     {
@@ -78,6 +80,7 @@ public class DemoPL : MonoBehaviour
         if (collision.gameObject.tag == "StageColider")
         {
             jump = false;
+            df.setFlg(jump);
         }
     }
 
@@ -96,6 +99,7 @@ public class DemoPL : MonoBehaviour
         {
             jump = true;
             animator.SetBool("Jump", false);
+            df.setFlg(jump);
         }
     }
 

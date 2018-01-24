@@ -17,7 +17,7 @@ public class Trap : MonoBehaviour {
     {
         if(col.tag== "Player")
         {
-            Debug.Log("当たったよ");
+
         }
     }
 }
