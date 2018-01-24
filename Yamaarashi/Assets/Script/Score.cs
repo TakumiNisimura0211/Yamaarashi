@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
 
     public int Scores = 00;
-    public GUIText scoreText;
+    public Text scoreText;
 
     // Use this for initialization
     void Start()
