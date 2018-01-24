@@ -291,6 +291,7 @@
     <Compile Include="Assets\Script\CourseBlockColider.cs" />
     <Compile Include="Assets\Script\DemoCA.cs" />
     <Compile Include="Assets\Script\DemoPL.cs" />
+    <Compile Include="Assets\Script\Effect.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\EnemyTest.cs" />
     <Compile Include="Assets\Script\GameClear.cs" />
