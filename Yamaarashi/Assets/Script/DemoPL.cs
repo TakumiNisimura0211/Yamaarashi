@@ -4,7 +4,7 @@ using System.Collections;
 public class DemoPL : MonoBehaviour
 {
 
-    float moveSpeed, maxSpeed;
+    float moveSpeed, maxSpeed,minSpeed;
     public DemoCA camera;
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
@@ -15,15 +15,15 @@ public class DemoPL : MonoBehaviour
     bool jump;
     Vector3 nonFowrad;
 
-    public DushEffect df;
-
     // Use this for initialization
     void Start()
     {
-        moveSpeed = 5.0f;
-        maxSpeed = 20.0f;
+        moveSpeed = 10.0f;
+        maxSpeed = 30.0f;
+        minSpeed = 10.0f;
         this.gameObject.transform.forward = camera.transform.forward;
-        jump = false;
+        jump = true;
+        nonFowrad = new Vector3(0, 0, 0);
 
         rb = gameObject.GetComponent<Rigidbody>();
 
@@ -42,14 +42,15 @@ public class DemoPL : MonoBehaviour
         //    //rb.AddForce(transform.forward * maxSpeed);
         //    transform.position += transform.forward * moveSpeed;
         //}
-
+        //入力
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
-
-        if (jump != true && Input.GetButtonDown("Jump"))
+        //ジャンプ
+        if (jump != false && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector3.up * 300);
-            animator.SetBool("Jump", true);
+            animator.SetBool("Jump", false);
+            jump = false;
         }
 
         //this.gameObject.transform.forward = camera.transform.forward;
@@ -79,8 +80,7 @@ public class DemoPL : MonoBehaviour
         //ジャンプ
         if (collision.gameObject.tag == "StageColider")
         {
-            jump = false;
-            df.setFlg(jump);
+            jump = true;
         }
     }
 
@@ -93,15 +93,6 @@ public class DemoPL : MonoBehaviour
     {
         camera.Stay(collision);
     }*/
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "StageColider")
-        {
-            jump = true;
-            animator.SetBool("Jump", false);
-            df.setFlg(jump);
-        }
-    }
 
     void FixedUpdate()
     {
@@ -120,20 +111,16 @@ public class DemoPL : MonoBehaviour
             if (animator.GetBool("Run") == false)
                 animator.SetBool("Run", true);
             transform.rotation = Quaternion.LookRotation(moveForward);
-            if (moveSpeed <= maxSpeed)
-                moveSpeed += 0.1f;
+            if (moveSpeed < maxSpeed)
+                moveSpeed += 1.0f;
             nonFowrad = moveForward;
-            //if(animator.GetBool("run") != true)
-            //animator.SetBool("run", true);
         }
         else if (moveForward == Vector3.zero)
         {
             if (animator.GetBool("Run") == true)
                 animator.SetBool("Run", false);
-            moveSpeed = 20.0f;
+            if(nonFowrad != new Vector3(0,0,0) && transform.rotation != Quaternion.LookRotation(nonFowrad))
             transform.rotation = Quaternion.LookRotation(nonFowrad);
-            //if (animator.GetBool("run") != false)
-            //    animator.SetBool("run", false);
         }
     }
 }
