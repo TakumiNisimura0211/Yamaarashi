@@ -15,11 +15,11 @@ public class DushEffect : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if(flg == true)
+        if(flg == false)
         {
             particle.Stop();
         }
-        else if ( flg == false)
+        else if ( flg == true)
         {
             particle.Play();
         }

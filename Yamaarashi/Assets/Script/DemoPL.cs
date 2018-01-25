@@ -15,7 +15,7 @@ public class DemoPL : MonoBehaviour
     bool jump;
     Vector3 nonFowrad;
 
-    DushEffect df;
+    public DushEffect df;
 
     // Use this for initialization
     void Start()

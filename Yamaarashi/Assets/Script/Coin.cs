@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour {
         transform.Rotate(new Vector3(0, 0, 90) * Time.deltaTime);
     }
 
-    void OnCollisionEnter(Collider coll)
+    void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "Player")
         {
