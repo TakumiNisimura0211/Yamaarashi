@@ -4,7 +4,7 @@ using System.Collections;
 public class DemoPL : MonoBehaviour
 {
 
-    float moveSpeed, maxSpeed,minSpeed;
+    float moveSpeed, maxSpeed, minSpeed;
     public DemoCA camera;
     private Rigidbody rb;
     float inputHorizontal, inputVertical;
@@ -12,7 +12,7 @@ public class DemoPL : MonoBehaviour
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
-    bool jump;
+    bool jump,end;
     Vector3 nonFowrad;
 
     public DushEffect df;
@@ -25,6 +25,7 @@ public class DemoPL : MonoBehaviour
         minSpeed = 10.0f;
         this.gameObject.transform.forward = camera.transform.forward;
         jump = true;
+        end = false;
         nonFowrad = new Vector3(0, 0, 0);
 
         rb = gameObject.GetComponent<Rigidbody>();
@@ -77,6 +78,10 @@ public class DemoPL : MonoBehaviour
             ScoreScript.SscoreUp();
             getSE.PlayOneShot(getSE.clip);
         }
+        if(collision.gameObject.tag == "Wave")
+        {
+            end = true;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -123,20 +128,20 @@ public class DemoPL : MonoBehaviour
         {
             if (animator.GetBool("Run") == true)
                 animator.SetBool("Run", false);
-            if(nonFowrad != new Vector3(0,0,0) && transform.rotation != Quaternion.LookRotation(nonFowrad))
-            transform.rotation = Quaternion.LookRotation(nonFowrad);
+            if (nonFowrad != new Vector3(0, 0, 0) && transform.rotation != Quaternion.LookRotation(nonFowrad))
+                transform.rotation = Quaternion.LookRotation(nonFowrad);
         }
     }
 }
 
-    /*void OnCollisionEnter(Collision collision)
+/*void OnCollisionEnter(Collision collision)
+{
+    //プレイヤーと衝突したとき
+    if (collision.gameObject.tag == "Coin")
     {
-        //プレイヤーと衝突したとき
-        if (collision.gameObject.tag == "Coin")
-        {
-            Destroy(collision.gameObject);
-            ScoreScript.ScoreUp();
-            getSE.PlayOneShot(getSE.clip);
-        }
-    }*/
+        Destroy(collision.gameObject);
+        ScoreScript.ScoreUp();
+        getSE.PlayOneShot(getSE.clip);
+    }
+}*/
 
