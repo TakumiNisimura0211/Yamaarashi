@@ -304,10 +304,12 @@
     <Compile Include="Assets\Script\LoadScene.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
+    <Compile Include="Assets\Script\PostEffect.cs" />
     <Compile Include="Assets\Script\Propera.cs" />
     <Compile Include="Assets\Script\Score.cs" />
     <Compile Include="Assets\Script\TimeText.cs" />
     <Compile Include="Assets\Script\Trap.cs" />
+    <Compile Include="Assets\Script\UVScroll.cs" />
     <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\UnityChan\Scripts\AutoBlinkforSD.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
@@ -324,6 +326,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\README_SD_UnityChan.txt" />
+    <None Include="Assets\Shader\Flag.shader" />
+    <None Include="Assets\Shader\ScreenChange.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

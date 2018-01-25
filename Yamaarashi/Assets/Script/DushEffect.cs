@@ -10,16 +10,16 @@ public class DushEffect : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         particle = GetComponent<ParticleSystem>();
-        flg = true;	
+        flg = false;	
     }
 
     // Update is called once per frame
     void Update () {
-        if(flg==true)
+        if(flg == true)
         {
             particle.Stop();
         }
-        else if (flg==false)
+        else if ( flg == false)
         {
             particle.Play();
         }
