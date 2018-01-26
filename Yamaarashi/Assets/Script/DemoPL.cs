@@ -145,7 +145,7 @@ public class DemoPL : MonoBehaviour
     }
     private void Restart()
     {
-        pe.setFlg(false);
+        pe.setFlg(true);
     }
 }
 
