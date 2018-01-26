@@ -12,11 +12,13 @@ public class DemoPL : MonoBehaviour
     AudioSource getSE;
     public Score ScoreScript;
     Animator animator;
-    bool jump,end;
+    bool jump;
     Vector3 nonFowrad;
 
     public DushEffect df;
     public PostEffect pe;
+
+    private Vector3 startPos;
 
     // Use this for initialization
     void Start()
@@ -26,8 +28,9 @@ public class DemoPL : MonoBehaviour
         minSpeed = 10.0f;
         this.gameObject.transform.forward = camera.transform.forward;
         jump = true;
-        end = false;
         nonFowrad = new Vector3(0, 0, 0);
+
+        startPos = this.gameObject.transform.position;
 
         rb = gameObject.GetComponent<Rigidbody>();
 
@@ -81,8 +84,9 @@ public class DemoPL : MonoBehaviour
         }
         if(collision.gameObject.tag == "Wave")
         {
-            end = true;
-            pe.setFlg(end);
+            pe.setFlg(true);
+            Invoke("Reset", 1.0f);
+            Invoke("Restart", 1.0f);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -100,10 +104,10 @@ public class DemoPL : MonoBehaviour
         camera.Exit(collision);
     }
 
-    /*private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         camera.Stay(collision);
-    }*/
+    }
 
     void FixedUpdate()
     {
@@ -134,16 +138,14 @@ public class DemoPL : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(nonFowrad);
         }
     }
-}
 
-/*void OnCollisionEnter(Collision collision)
-{
-    //プレイヤーと衝突したとき
-    if (collision.gameObject.tag == "Coin")
+    private void Reset()
     {
-        Destroy(collision.gameObject);
-        ScoreScript.ScoreUp();
-        getSE.PlayOneShot(getSE.clip);
+        this.gameObject.transform.position = startPos;
     }
-}*/
+    private void Restart()
+    {
+        pe.setFlg(false);
+    }
+}
 
