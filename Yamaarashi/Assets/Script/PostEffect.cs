@@ -22,12 +22,12 @@ public class PostEffect : MonoBehaviour {
 		if(flg==true)
         {
             fadeFlag = true;
-            value = 1.0f;
+            value = 10.0f;
         }
         else if(flg==false)
         {
             fadeFlag = false;
-            value = -1.0f;
+            value = -10.0f;
         }
         //Clamp(float value,float min,float max)
         //与えられた最小 float 値と最大 float 値の範囲に値を制限します。

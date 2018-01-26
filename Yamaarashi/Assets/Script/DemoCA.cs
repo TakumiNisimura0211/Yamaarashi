@@ -25,7 +25,7 @@ public class DemoCA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //コースブロックと当たり続けている間
+        /*//コースブロックと当たり続けている間
         //if (collision.gameObject.tag == "CourseBlockColider")
         //{
             short num = 0;
@@ -39,14 +39,14 @@ public class DemoCA : MonoBehaviour
                 }
             }
             vec /= num;
-            //this.transform.rotation = Quaternion.LookRotation(vec);
-            this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 0.1f);
-        //this.transform.position = player.transform.position + vec * -7 + plus;
-        journeyLength = Vector3.Distance(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus));
+            this.transform.rotation = Quaternion.LookRotation(vec);
+        //this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 0.1f);
+        this.transform.position = player.transform.position + vec * -10 + plus;
+        /*journeyLength = Vector3.Distance(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus));
         float distCovered = (Time.time - startTime) * 0.1f;
         float fracJourney = distCovered / journeyLength;
         this.transform.position = Vector3.Lerp(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus), fracJourney);
-        //}
+        }*/
     }
 
     public void Enter(Collider collision)
@@ -100,10 +100,10 @@ public class DemoCA : MonoBehaviour
                 }
             }
             vec /= num;
-            //this.transform.rotation = Quaternion.LookRotation(vec);
-            this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 1.0f);
-            //this.transform.position = player.transform.position + vec * -7 + plus;
-            this.transform.position = Vector3.Lerp(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus), Time.time * 1.0f);
+            this.transform.rotation = Quaternion.LookRotation(vec);
+            //this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 1.0f);
+            this.transform.position = player.transform.position + vec * -10 + plus;
+            //this.transform.position = Vector3.Lerp(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus), Time.time * 1.0f);
         }
     }
 }
