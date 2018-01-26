@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PostEffect : MonoBehaviour {
+    // ポストエフェクトシェーダー入りのマテリアル 
+    public Material postEffectMat;
+    //画面切り替え 
+    const float fadeMax = 64.0f;
+    float fadeCount = 0.0f;
+    bool fadeFlag = false;
+    float value = 0.0f;
+    bool flg;
+
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if(flg==true)
+        {
+            fadeFlag = true;
+            value = 1.0f;
+        }
+        else if(flg==false)
+        {
+            fadeFlag = false;
+            value = -1.0f;
+        }
+        //Clamp(float value,float min,float max)
+        //与えられた最小 float 値と最大 float 値の範囲に値を制限します。
+        fadeCount = Mathf.Clamp(fadeCount + value/*(fadeFlag ? 1.0f : -1.0f)*/ / fadeMax, 0.0f, 1.0f);
+
+        postEffectMat.SetFloat("_FadeCount", fadeCount);
+
+	}
+    void OnRenderImage(RenderTexture src, RenderTexture dest)
+    {
+        Graphics.Blit(src, dest, postEffectMat);
+    }
+    public void setFlg(bool f)
+    {
+        flg = f;
+    }
+}

@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Trap
   - StageColider
+  - Wave
   layers:
   - Default
   - TransparentFX

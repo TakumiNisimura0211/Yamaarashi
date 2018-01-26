@@ -16,6 +16,7 @@ public class DemoPL : MonoBehaviour
     Vector3 nonFowrad;
 
     public DushEffect df;
+    public PostEffect pe;
 
     // Use this for initialization
     void Start()
@@ -81,6 +82,7 @@ public class DemoPL : MonoBehaviour
         if(collision.gameObject.tag == "Wave")
         {
             end = true;
+            pe.setFlg(end);
         }
     }
     private void OnCollisionEnter(Collision collision)
