@@ -285,6 +285,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\cube.cs" />
     <Compile Include="Assets\GrassRoadRace\Script\CameraMove.cs" />
     <Compile Include="Assets\Script\Accelerator.cs" />
     <Compile Include="Assets\Script\box.cs" />
@@ -328,6 +329,7 @@
     <None Include="Assets\README_SD_UnityChan.txt" />
     <None Include="Assets\Shader\Flag.shader" />
     <None Include="Assets\Shader\ScreenChange.shader" />
+    <None Include="Assets\Shader\ScreenChange2.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

@@ -84,9 +84,13 @@ public class DemoPL : MonoBehaviour
         }
         if(collision.gameObject.tag == "Wave")
         {
-            pe.setFlg(true);
+            pe.setDFlg(true);
             Invoke("Reset", 1.0f);
             Invoke("Restart", 1.0f);
+        }
+        if(collision.gameObject.tag=="goal")
+        {
+            pe.setFlg(true);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -145,7 +149,7 @@ public class DemoPL : MonoBehaviour
     }
     private void Restart()
     {
-        pe.setFlg(true);
+        pe.setDFlg(false);
     }
 }
 

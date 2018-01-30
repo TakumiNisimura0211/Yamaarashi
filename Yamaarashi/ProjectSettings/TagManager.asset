@@ -13,6 +13,7 @@ TagManager:
   - Trap
   - StageColider
   - Wave
+  - goal
   layers:
   - Default
   - TransparentFX

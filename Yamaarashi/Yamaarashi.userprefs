@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Yamaarashi.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shader\ScreenChange2.shader">
     <Files>
       <File FileName="Assets\Script\DemoPL.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shader\ScreenChange2.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

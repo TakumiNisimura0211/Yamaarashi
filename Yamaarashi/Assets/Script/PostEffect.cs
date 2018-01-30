@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PostEffect : MonoBehaviour {
     // ポストエフェクトシェーダー入りのマテリアル 
-    public Material postEffectMat;
+    public Material[] postEffectMat;
     //画面切り替え 
     const float fadeMax = 64.0f;
     float fadeCount = 0.0f;
     bool fadeFlag = false;
     float value = 0.0f;
+    bool deadfld;
     bool flg;
+    int i;
 
     // Use this for initialization
     void Start () {
@@ -19,29 +21,44 @@ public class PostEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(flg==true)
+        if (deadfld == true || flg==true)
         {
             fadeFlag = true;
-            value = 10.0f;
+            value = 2.0f;
         }
-        else if(flg==false)
+        else if (deadfld == false || flg == false)
         {
             fadeFlag = false;
-            value = -10.0f;
+            value = -2.0f;
         }
+
+        //if (flg==true)
+        //{
+        //    fadeFlag = true;
+        //    value = 1.0f;
+        //}
+
+
         //Clamp(float value,float min,float max)
         //与えられた最小 float 値と最大 float 値の範囲に値を制限します。
-        fadeCount = Mathf.Clamp(fadeCount + value/*(fadeFlag ? 1.0f : -1.0f)*/ / fadeMax, 0.0f, 1.0f);
+        fadeCount = Mathf.Clamp(fadeCount + value / fadeMax, 0.0f, 1.0f);
 
-        postEffectMat.SetFloat("_FadeCount", fadeCount);
+        postEffectMat[i].SetFloat("_FadeCount", fadeCount);
 
 	}
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
-        Graphics.Blit(src, dest, postEffectMat);
+        Graphics.Blit(src, dest, postEffectMat[i]);
     }
+    public void setDFlg(bool f)
+    {
+        deadfld = f;
+        i = 0;
+    }
+
     public void setFlg(bool f)
     {
         flg = f;
+        i = 1;
     }
 }
