@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4606158700933210}
-  - component: {fileID: 95029544356954520}
   m_Layer: 0
   m_Name: Trap_Needle
   m_TagString: Untagged
@@ -68,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019006897666902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.827053, y: -0.22, z: 200.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.169133, y: 49.09, z: 510.03125}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4647392628392364}
   - {fileID: 4962720437688690}
@@ -116,7 +115,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d62f69f04fd2fd4d8d112bc995ecea9, type: 3}
+  - {fileID: 2100000, guid: a07105af0bc77a942ac71b139b8f4c4b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,7 +149,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d62f69f04fd2fd4d8d112bc995ecea9, type: 3}
+  - {fileID: 2100000, guid: a07105af0bc77a942ac71b139b8f4c4b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,28 +175,11 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356384606477628}
-  m_Mesh: {fileID: 4300000, guid: 6d62f69f04fd2fd4d8d112bc995ecea9, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a07105af0bc77a942ac71b139b8f4c4b, type: 3}
 --- !u!33 &33914846793393138
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187900350488892}
-  m_Mesh: {fileID: 4300002, guid: 6d62f69f04fd2fd4d8d112bc995ecea9, type: 3}
---- !u!95 &95029544356954520
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019006897666902}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6d62f69f04fd2fd4d8d112bc995ecea9, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Mesh: {fileID: 4300002, guid: a07105af0bc77a942ac71b139b8f4c4b, type: 3}
