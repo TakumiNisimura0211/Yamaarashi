@@ -61,6 +61,11 @@ public class DemoPL : MonoBehaviour
             df.setFlg(jump);
         }
 
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            pe.setFlg(false);
+        }
+
         //this.gameObject.transform.forward = camera.transform.forward;
     }
 

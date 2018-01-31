@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class cube : MonoBehaviour {
 
-    public PostEffect pe;
+    public PostEffectTest pe;
 
     // Use this for initialization
     void Start () {
@@ -18,9 +20,10 @@ public class cube : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag=="Player")
+        if (col.gameObject.tag == "Player")
         {
-            pe.setDFlg(true);
+            pe.setFlg(true);
+            SceneManager.LoadScene("satge_2.1");
         }
     }
 }
