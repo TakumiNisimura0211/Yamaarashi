@@ -258,6 +258,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.03
   rend: {fileID: 0}
+--- !u!114 &35385751 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114166732035100870, guid: c885d641fd9d39c4aa7ce8492d38ed93,
+    type: 2}
+  m_PrefabInternal: {fileID: 191097518}
+  m_Script: {fileID: 11500000, guid: 1f26b2abcc1884b44b5c520be4e11a61, type: 3}
 --- !u!1 &39584816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,12 +1475,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c885d641fd9d39c4aa7ce8492d38ed93, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &191097519 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114821109379879474, guid: c885d641fd9d39c4aa7ce8492d38ed93,
-    type: 2}
-  m_PrefabInternal: {fileID: 191097518}
-  m_Script: {fileID: 11500000, guid: 1f26b2abcc1884b44b5c520be4e11a61, type: 3}
 --- !u!1 &195676663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1661,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06414fe0e8661634eb474b60c4417e15, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &225935693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 225935694}
+  - component: {fileID: 225935696}
+  - component: {fileID: 225935695}
+  m_Layer: 5
+  m_Name: GoalText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &225935694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225935693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253033525}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &225935695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225935693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.014705896, g: 0.83691674, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4ed6f49189b471f47a169016a431fcfc, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: G o a l !!
+--- !u!222 &225935696
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225935693}
 --- !u!1 &228902807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1987,7 @@ RectTransform:
   m_Children:
   - {fileID: 1638706236}
   - {fileID: 704632341}
+  - {fileID: 225935694}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15522,7 +15597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1869171407}
   ScoreScript: {fileID: 1638706237}
-  df: {fileID: 191097519}
+  goaltext: {fileID: 225935693}
+  df: {fileID: 35385751}
   pe: {fileID: 1869171409}
 --- !u!4 &1656253375 stripped
 Transform:
@@ -17743,7 +17819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87bd5eef0789f44490f78f2cb5a594f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postEffectMat: {fileID: 2100000, guid: 07c0341f2e95247499890ca8facf1c8f, type: 2}
+  postEffectMat:
+  - {fileID: 2100000, guid: e52650c7f933ada4686250e29a5b7ed3, type: 2}
+  - {fileID: 2100000, guid: 794a115a330416944a86d3ee0e6bda77, type: 2}
 --- !u!1 &1869252569
 GameObject:
   m_ObjectHideFlags: 0
