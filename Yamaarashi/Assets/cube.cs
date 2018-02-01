@@ -20,10 +20,10 @@ public class cube : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            pe.setFlg(true);
             SceneManager.LoadScene("satge_2.1");
         }
+
     }
 }

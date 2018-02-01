@@ -32,13 +32,11 @@ Shader "PostEffect/ScreenChange"
 				//フェードの大きさ
 				fadeSize = distance(float2(0.0, 0.0), float2(0.5, 0.5) * _ScreenParams.xy); 
 				//中心からの距離
-				
 				float dist = distance(float2(0.5, 0.5) * _ScreenParams.xy, i.uv * _ScreenParams.xy);
 				visible = clamp((1.0 - _FadeCount) * fadeSize - dist, 0.0, 1.0);
 				c = fixed4(tex2D(_MainTex, i.uv).rgb * visible, 1.0);
 				return c;
 			}
-
 			ENDCG
 		}
 	}
