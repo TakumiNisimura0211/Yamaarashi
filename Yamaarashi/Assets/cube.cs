@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class cube : MonoBehaviour {
 
-    public PostEffectTest pe;
+    public PostEffect pe;
 
     // Use this for initialization
     void Start () {
@@ -20,10 +20,21 @@ public class cube : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (col.gameObject.tag == "Player")
         {
+
+            //SceneManager.LoadScene("satge_2.1");
+
+            Change();
+        }
+    }
+    void Change()
+    {
+        if(Time.timeSinceLevelLoad>5.0f)
+        {
+            pe.setDFlg(true);
             SceneManager.LoadScene("satge_2.1");
         }
-
     }
 }
+

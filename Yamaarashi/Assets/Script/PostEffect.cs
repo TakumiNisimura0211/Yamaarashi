@@ -8,28 +8,28 @@ public class PostEffect : MonoBehaviour {
     //画面切り替え 
     const float fadeMax = 64.0f;
     float fadeCount = 0.0f;
-    bool fadeFlag = false;
-    float value = 0.0f;
+    static bool fadeFlag = true;
+    public float value = 0.0f;
     bool deadfld;
     bool flg;
     int i;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (deadfld == true || flg==true)
         {
             fadeFlag = true;
-            value = 2.0f;
+            value = 3.0f;
         }
         else if (deadfld == false || flg == false)
         {
             fadeFlag = false;
-            value = -2.0f;
+            value = -3.0f;
         }
 
         //Clamp(float value,float min,float max)

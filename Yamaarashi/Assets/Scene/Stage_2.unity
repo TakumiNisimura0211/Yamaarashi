@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 68124109}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e59d0e560dad1347aaafb2552e686a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pe: {fileID: 221216024}
+  pe: {fileID: 221216023}
 --- !u!1001 &151257954
 Prefab:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 221216017}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 221d8dfb5bc81f04fa5d185015d4ed87, type: 3}
   m_Name: 
@@ -365,19 +365,20 @@ MonoBehaviour:
   postEffectMat:
   - {fileID: 2100000, guid: ec8eb1466002d9046b2016979a573d95, type: 2}
   - {fileID: 2100000, guid: a489720f1af06234581c744c3b62919e, type: 2}
+  value: 0
 --- !u!114 &221216024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 221216017}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 081fe4c02b725f644a1704d73874e129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   postEffectMat: {fileID: 2100000, guid: ec8eb1466002d9046b2016979a573d95, type: 2}
-  postEffectMat2: {fileID: 2100000, guid: a489720f1af06234581c744c3b62919e, type: 2}
+  fadeCount: 64
 --- !u!1 &267037623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1558,11 @@ Prefab:
       propertyPath: pe
       value: 
       objectReference: {fileID: 221216023}
+    - target: {fileID: 114691942275491042, guid: 39e985c0498d7e545b1c60dccf3a5d10,
+        type: 2}
+      propertyPath: LS
+      value: 
+      objectReference: {fileID: 68124109}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39e985c0498d7e545b1c60dccf3a5d10, type: 2}
   m_IsPrefabParent: 0

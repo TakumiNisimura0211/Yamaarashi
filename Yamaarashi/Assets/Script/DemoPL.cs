@@ -61,10 +61,7 @@ public class DemoPL : MonoBehaviour
             df.setFlg(jump);
         }
 
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            pe.setFlg(false);
-        }
+ 
 
         //this.gameObject.transform.forward = camera.transform.forward;
     }
@@ -93,10 +90,7 @@ public class DemoPL : MonoBehaviour
             Invoke("Reset", 1.0f);
             Invoke("Restart", 1.0f);
         }
-        if(collision.gameObject.tag=="goal")
-        {
-            pe.setFlg(true);
-        }
+
     }
     private void OnCollisionEnter(Collision collision)
     {
