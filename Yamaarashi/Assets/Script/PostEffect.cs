@@ -32,6 +32,13 @@ public class PostEffect : MonoBehaviour {
             value = -2.0f;
         }
 
+        //if (flg==true)
+        //{
+        //    fadeFlag = true;
+        //    value = 1.0f;
+        //}
+
+
         //Clamp(float value,float min,float max)
         //与えられた最小 float 値と最大 float 値の範囲に値を制限します。
         fadeCount = Mathf.Clamp(fadeCount + value / fadeMax, 0.0f, 1.0f);
@@ -53,10 +60,5 @@ public class PostEffect : MonoBehaviour {
     {
         flg = f;
         i = 1;
-    }
-    
-    public void SetfadeFlag(bool flg)
-    {
-        fadeFlag = flg;
     }
 }

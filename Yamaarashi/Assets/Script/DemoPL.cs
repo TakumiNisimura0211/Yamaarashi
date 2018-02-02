@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DemoPL : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DemoPL : MonoBehaviour
     Animator animator;
     bool jump;
     Vector3 nonFowrad;
+    public GameObject goaltext,starttext;
 
     public DushEffect df;
     public PostEffect pe;
@@ -43,13 +45,6 @@ public class DemoPL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //if(Input.GetKey(KeyCode.W))
-        //{
-        //    //rb.AddForce(transform.forward * maxSpeed);
-        //    transform.position += transform.forward * moveSpeed;
-        //}
-        //入力
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
         //ジャンプ
@@ -60,13 +55,6 @@ public class DemoPL : MonoBehaviour
             jump = false;
             df.setFlg(jump);
         }
-
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            pe.setFlg(false);
-        }
-
-        //this.gameObject.transform.forward = camera.transform.forward;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -83,6 +71,7 @@ public class DemoPL : MonoBehaviour
         }
         if (collision.gameObject.tag == "Coin+")
         {
+            startPos = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
             ScoreScript.SscoreUp();
             getSE.PlayOneShot(getSE.clip);
@@ -93,9 +82,11 @@ public class DemoPL : MonoBehaviour
             Invoke("Reset", 1.0f);
             Invoke("Restart", 1.0f);
         }
-        if(collision.gameObject.tag=="goal")
+        if(collision.gameObject.tag=="Goal")
         {
-            pe.setFlg(true);
+            goaltext.gameObject.SetActive(true);
+            Invoke("SetF", 1.0f);
+            Invoke("EndLoad", 2.5f);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -155,6 +146,15 @@ public class DemoPL : MonoBehaviour
     private void Restart()
     {
         pe.setDFlg(false);
+    }
+
+    private void SetF()
+    {
+        pe.setFlg(true);
+    }
+    private void EndLoad()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }
 

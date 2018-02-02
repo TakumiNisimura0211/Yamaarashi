@@ -8,6 +8,7 @@ public class TimeText : MonoBehaviour {
     //前のUpdate時の秒数
     float oldsecond;
     Text timetext;
+    string rText;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +30,13 @@ public class TimeText : MonoBehaviour {
         if((int)second != (int)oldsecond)
         {
             timetext.text = "Time " + minute.ToString("00") + ":" + ((int)second).ToString("00");
+            rText = minute.ToString("00") + ":" + ((int)second).ToString("00");
         }
         oldsecond = second;
 	}
+
+    public string GetTime()
+    {
+        return rText;
+    }
 }

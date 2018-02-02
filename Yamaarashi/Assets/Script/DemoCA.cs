@@ -19,7 +19,8 @@ public class DemoCA : MonoBehaviour
     {
         course = new CourseBlock[] { null, null, null, null };
         name = new string[] { null, null, null, null };
-        player = GameObject.FindGameObjectWithTag("Player"); startTime = Time.time;
+        player = GameObject.FindGameObjectWithTag("Player");
+        startTime = Time.time;
     }
 
     // Update is called once per frame
@@ -101,8 +102,8 @@ public class DemoCA : MonoBehaviour
             }
             vec /= num;
             this.transform.rotation = Quaternion.LookRotation(vec);
-            //this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 1.0f);
             this.transform.position = player.transform.position + vec * -10 + plus;
+            //this.transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, Quaternion.LookRotation(vec), Time.time * 1.0f);
             //this.transform.position = Vector3.Lerp(this.gameObject.transform.position, (player.transform.position + vec * -7 + plus), Time.time * 1.0f);
         }
     }
