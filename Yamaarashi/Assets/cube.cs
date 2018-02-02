@@ -30,9 +30,9 @@ public class cube : MonoBehaviour {
     }
     void Change()
     {
-        if(Time.timeSinceLevelLoad>5.0f)
+        if(Time.timeSinceLevelLoad > 4.0f)
         {
-            pe.setDFlg(true);
+            pe.setFlg(true);
             SceneManager.LoadScene("satge_2.1");
         }
     }

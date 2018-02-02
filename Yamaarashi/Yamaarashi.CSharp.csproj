@@ -308,6 +308,8 @@
     <Compile Include="Assets\Script\PostEffect.cs" />
     <Compile Include="Assets\Script\PostEffectTest.cs" />
     <Compile Include="Assets\Script\Propera.cs" />
+    <Compile Include="Assets\Script\Result.cs" />
+    <Compile Include="Assets\Script\ResultController.cs" />
     <Compile Include="Assets\Script\Score.cs" />
     <Compile Include="Assets\Script\TimeText.cs" />
     <Compile Include="Assets\Script\Trap.cs" />
